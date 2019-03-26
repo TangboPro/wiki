@@ -1,0 +1,14 @@
+package ${package_name}.service;
+
+import com.tangmall.role.common.base.BaseService;
+import ${package_name}.model.base.${model};
+import ${package_name}.model.base.${model}Example;
+
+/**
+* ${model}Service接口
+* Created by zhu on ${ctime}.
+*/
+
+public interface ${model}Service extends BaseService<${model}, ${model}Example> {
+
+}

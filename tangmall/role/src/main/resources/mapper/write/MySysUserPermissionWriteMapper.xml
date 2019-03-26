@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tangmall.role.dao.write.MySysUserPermissionWriteMapper">
+    <!--批量新增回写主键支持-->
+    <insert id="insertBatch">
+        INSERT INTO sys_user_permission (user_id, permission_id,permission_type) VALUES
+        <foreach collection="list" separator="," item="item" index="index">
+            (#{item.userId,jdbcType=INTEGER},
+            #{item.permissionId,jdbcType=INTEGER},
+            #{item.permissionType,jdbcType=INTEGER})
+        </foreach>
+    </insert>
+</mapper>
