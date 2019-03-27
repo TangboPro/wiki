@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!-- 配置文件 -->
+    <properties resource="application.properties"/>
+
+    <context id="Read" targetRuntime="MyBatis3" defaultModelType="flat">
+
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <!-- 由于beginningDelimiter和endingDelimiter的默认值为双引号(")，在Mysql中不能这么写，所以还要将这两个默认值改为`  -->
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <!-- 为生成的Java模型创建一个toString方法 -->
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"></plugin>
+
+        <!-- 为模型生成序列化方法-->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+
+        <commentGenerator type="com.tang.wiki.common.utils.CommentGenerator">
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+            <property name="addRemarkComments" value="true"/>
+        </commentGenerator>
+
+        <!-- 数据库连接 -->
+        <jdbcConnection driverClass="${spring.datasource.druid.master.driver-class-name}"
+                        connectionURL="${spring.datasource.druid.master.url}"
+                        userId="${spring.datasource.druid.master.username}"
+                        password="${spring.datasource.druid.master.password}">
+        </jdbcConnection>
+
+
+
+        <!-- model生成 -->
+        <javaModelGenerator targetPackage="com.tang.wiki.role.model.base" targetProject="D:/TangBo/Github/tang.wiki/role/src/main/java" />
+
+        <!-- MapperXML生成 -->
+        <sqlMapGenerator targetPackage="mapper.read.base" targetProject="role/src/main/resources" />
+
+        <!-- Mapper接口生成 -->
+        <javaClientGenerator targetPackage="com.tang.wiki.role.dao.read.base" targetProject="D:/TangBo/Github/tang.wiki/role/src/main/java" type="XMLMAPPER" />
+
+        <!-- 需要映射的表 -->
+                                    <table tableName="sys_group" domainObjectName="SysGroup" mapperName="SysGroupReadMapper"
+                       enableUpdateByPrimaryKey="false"
+                       enableDeleteByPrimaryKey="false"
+                       enableInsert="false"
+                       enableDeleteByExample="false"
+                       enableUpdateByExample="false"
+                >
+                    <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+                </table>
+                                                <table tableName="sys_group_permission" domainObjectName="SysGroupPermission" mapperName="SysGroupPermissionReadMapper"
+                       enableUpdateByPrimaryKey="false"
+                       enableDeleteByPrimaryKey="false"
+                       enableInsert="false"
+                       enableDeleteByExample="false"
+                       enableUpdateByExample="false"
+                >
+                    <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+                </table>
+                                                <table tableName="sys_permission" domainObjectName="SysPermission" mapperName="SysPermissionReadMapper"
+                       enableUpdateByPrimaryKey="false"
+                       enableDeleteByPrimaryKey="false"
+                       enableInsert="false"
+                       enableDeleteByExample="false"
+                       enableUpdateByExample="false"
+                >
+                    <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+                </table>
+                                                <table tableName="sys_role" domainObjectName="SysRole" mapperName="SysRoleReadMapper"
+                       enableUpdateByPrimaryKey="false"
+                       enableDeleteByPrimaryKey="false"
+                       enableInsert="false"
+                       enableDeleteByExample="false"
+                       enableUpdateByExample="false"
+                >
+                    <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+                </table>
+                                                <table tableName="sys_role_group" domainObjectName="SysRoleGroup" mapperName="SysRoleGroupReadMapper"
+                       enableUpdateByPrimaryKey="false"
+                       enableDeleteByPrimaryKey="false"
+                       enableInsert="false"
+                       enableDeleteByExample="false"
+                       enableUpdateByExample="false"
+                >
+                    <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+                </table>
+                                                <table tableName="sys_role_permission" domainObjectName="SysRolePermission" mapperName="SysRolePermissionReadMapper"
+                       enableUpdateByPrimaryKey="false"
+                       enableDeleteByPrimaryKey="false"
+                       enableInsert="false"
+                       enableDeleteByExample="false"
+                       enableUpdateByExample="false"
+                >
+                    <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+                </table>
+                                                <table tableName="sys_user" domainObjectName="SysUser" mapperName="SysUserReadMapper"
+                       enableUpdateByPrimaryKey="false"
+                       enableDeleteByPrimaryKey="false"
+                       enableInsert="false"
+                       enableDeleteByExample="false"
+                       enableUpdateByExample="false"
+                >
+                    <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+                </table>
+                                                <table tableName="sys_user_group" domainObjectName="SysUserGroup" mapperName="SysUserGroupReadMapper"
+                       enableUpdateByPrimaryKey="false"
+                       enableDeleteByPrimaryKey="false"
+                       enableInsert="false"
+                       enableDeleteByExample="false"
+                       enableUpdateByExample="false"
+                >
+                    <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+                </table>
+                                                <table tableName="sys_user_permission" domainObjectName="SysUserPermission" mapperName="SysUserPermissionReadMapper"
+                       enableUpdateByPrimaryKey="false"
+                       enableDeleteByPrimaryKey="false"
+                       enableInsert="false"
+                       enableDeleteByExample="false"
+                       enableUpdateByExample="false"
+                >
+                    <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+                </table>
+                                                <table tableName="sys_user_role" domainObjectName="SysUserRole" mapperName="SysUserRoleReadMapper"
+                       enableUpdateByPrimaryKey="false"
+                       enableDeleteByPrimaryKey="false"
+                       enableInsert="false"
+                       enableDeleteByExample="false"
+                       enableUpdateByExample="false"
+                >
+                </table>
+                        </context>
+
+
+
+    <context id="Write" targetRuntime="MyBatis3" defaultModelType="flat">
+
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <!-- 由于beginningDelimiter和endingDelimiter的默认值为双引号(")，在Mysql中不能这么写，所以还要将这两个默认值改为`  -->
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <!-- 为生成的Java模型创建一个toString方法 -->
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"></plugin>
+
+        <!-- 为模型生成序列化方法-->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+
+        <commentGenerator type="com.tang.wiki.common.utils.CommentGenerator">
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+            <property name="addRemarkComments" value="true"/>
+        </commentGenerator>
+
+        <!-- 数据库连接 -->
+        <jdbcConnection driverClass="${spring.datasource.druid.master.driver-class-name}"
+                        connectionURL="${spring.datasource.druid.master.url}"
+                        userId="${spring.datasource.druid.master.username}"
+                        password="${spring.datasource.druid.master.password}">
+        </jdbcConnection>
+
+
+
+        <!-- model生成 -->
+        <javaModelGenerator targetPackage="com.tang.wiki.role.model.base" targetProject="D:/TangBo/Github/tang.wiki/role/src/main/java" />
+
+        <!-- MapperXML生成 -->
+        <sqlMapGenerator targetPackage="mapper.write.base" targetProject="role/src/main/resources" />
+
+        <!-- Mapper接口生成 -->
+        <javaClientGenerator targetPackage="com.tang.wiki.role.dao.write.base" targetProject="D:/TangBo/Github/tang.wiki/role/src/main/java" type="XMLMAPPER" />
+
+        <!-- 需要映射的表 -->
+                                    <table tableName="sys_group" domainObjectName="SysGroup" mapperName="SysGroupWriteMapper"
+                       enableSelectByPrimaryKey="false"
+                       enableCountByExample="false"
+                       enableSelectByExample="false"
+                >
+                    <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+                </table>
+                                                <table tableName="sys_group_permission" domainObjectName="SysGroupPermission" mapperName="SysGroupPermissionWriteMapper"
+                       enableSelectByPrimaryKey="false"
+                       enableCountByExample="false"
+                       enableSelectByExample="false"
+                >
+                    <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+                </table>
+                                                <table tableName="sys_permission" domainObjectName="SysPermission" mapperName="SysPermissionWriteMapper"
+                       enableSelectByPrimaryKey="false"
+                       enableCountByExample="false"
+                       enableSelectByExample="false"
+                >
+                    <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+                </table>
+                                                <table tableName="sys_role" domainObjectName="SysRole" mapperName="SysRoleWriteMapper"
+                       enableSelectByPrimaryKey="false"
+                       enableCountByExample="false"
+                       enableSelectByExample="false"
+                >
+                    <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+                </table>
+                                                <table tableName="sys_role_group" domainObjectName="SysRoleGroup" mapperName="SysRoleGroupWriteMapper"
+                       enableSelectByPrimaryKey="false"
+                       enableCountByExample="false"
+                       enableSelectByExample="false"
+                >
+                    <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+                </table>
+                                                <table tableName="sys_role_permission" domainObjectName="SysRolePermission" mapperName="SysRolePermissionWriteMapper"
+                       enableSelectByPrimaryKey="false"
+                       enableCountByExample="false"
+                       enableSelectByExample="false"
+                >
+                    <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+                </table>
+                                                <table tableName="sys_user" domainObjectName="SysUser" mapperName="SysUserWriteMapper"
+                       enableSelectByPrimaryKey="false"
+                       enableCountByExample="false"
+                       enableSelectByExample="false"
+                >
+                    <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+                </table>
+                                                <table tableName="sys_user_group" domainObjectName="SysUserGroup" mapperName="SysUserGroupWriteMapper"
+                       enableSelectByPrimaryKey="false"
+                       enableCountByExample="false"
+                       enableSelectByExample="false"
+                >
+                    <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+                </table>
+                                                <table tableName="sys_user_permission" domainObjectName="SysUserPermission" mapperName="SysUserPermissionWriteMapper"
+                       enableSelectByPrimaryKey="false"
+                       enableCountByExample="false"
+                       enableSelectByExample="false"
+                >
+                    <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+                </table>
+                                                <table tableName="sys_user_role" domainObjectName="SysUserRole" mapperName="SysUserRoleWriteMapper"
+                       enableSelectByPrimaryKey="false"
+                       enableCountByExample="false"
+                       enableSelectByExample="false"
+                >
+                </table>
+                        </context>
+</generatorConfiguration>
